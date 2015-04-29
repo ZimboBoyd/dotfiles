@@ -10,6 +10,11 @@ has_executable() {
 # tell me a fortune :)
 has_executable "fortune" && has_executable "cowsay" && fortune -as | cowsay
 
+source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
+
+homeshick --quiet refresh
+
 # start antigen
 source $HOME/antigen/antigen.zsh
 
@@ -241,5 +246,3 @@ export VISUAL=vim
 export GREP_OPTIONS='--color=always'
 
 
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
-fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
