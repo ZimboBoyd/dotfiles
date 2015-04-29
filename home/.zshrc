@@ -15,6 +15,8 @@ fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 
 homeshick --quiet refresh
 
+alias homeshick_push="homeshick check dotfiles ; homeshick cd dotfiles ; git commit -m "Changes on $(date)" ; git push origin master ; homeshick check dotfiles ; git status"
+
 # start antigen
 source $HOME/antigen/antigen.zsh
 
